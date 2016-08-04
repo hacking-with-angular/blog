@@ -1,6 +1,6 @@
 title: Step 3 - User Input
 date: 2016-8-4 12:00:00
-tags: ["Angular2"]
+tags: ["Angular2", "Travel"]
 ---
 在这篇文章中,我们将要讲解如何处理用户的操作,最常见的就是点击和输入了;本篇文章着重讲解关于用户的点击和输入的处理.
 

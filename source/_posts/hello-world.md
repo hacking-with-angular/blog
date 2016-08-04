@@ -1,6 +1,6 @@
 title: 开始我们的Angular2之旅
 date: 2016-8-1 12:00:00
-tags: ["Angular2"]
+tags: ["Angular2", "Travel"]
 ---
 我们准备在这里发布一系列的文章来讲解如何一步步的学习还有使用`Angular2`
 

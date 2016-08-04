@@ -1,6 +1,6 @@
 title: Step 2 - Displaying Data
 date: 2016-8-3 12:00:00
-tags: ["Angular2"]
+tags: ["Angular2", "Travel"]
 ---
 在这一章节中,我们来学习如何使用Angular2来展示数据,以及如何使用它的内置指令`NgFor`和`NgIf`
 
