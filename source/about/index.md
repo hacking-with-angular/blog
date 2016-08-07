@@ -1,6 +1,6 @@
 title: 关于我们
 date: 0000-00-00 00:00:00
-layout: page
+layout: default-about
 ---
 这里是一个与大家分享关于学习和使用Angular2这个框架的一些知识和心得.
 
