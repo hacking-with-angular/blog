@@ -151,8 +151,40 @@ export class AppComponent {
 <form class="DEMO-form">
 <!-- ... -->
 ```
-这样我们改变表单中的数据,就可以在上面看到实时的变化,如下图所示;这就说明,使用`[()]`确实是能够起到上想绑定的作用的.
+这样我们改变表单中的数据,就可以在上面看到实时的变化,如下图所示;这就说明,使用`[()]`确实是能够起到双向绑定的作用的.
 ![表单图片][3]
+
+在前面几章节的学习中中,我们知道可以使用模板变量来对一个模板中的`input`模板进行赋值和取值;
+但是还是有点麻烦,当我们遇到`[(ngModel)]`后,
+一切都变得那么简单;我们接着来讲解`[(ngModel)]`这种双向绑定数据的方式;
+
+**既然我们已经知道可以使用`[]`和`()`来进行数据的单项并且不同方向的绑定,我们何不尝试着把`[(ngModel)]`进行拆分呢?**
+看到这里,大家的思路应该是这样子的:
+```typescript
+<input  #username
+        [ngModel]="user.username"
+        (ngModel)="user.username = username.value"
+        type="text" class="form-control" id="username" placeholder="Username">
+```
+然而事情并不像我们预期的那样,因为`ng2`中不是通过`ngModel`事件来触发表单中数据变化的操作,而是通过`ngModelChange`;
+所以我们将`(ngModel)="user.username = username.value"`改为`(ngModelChange)="user.username = username.value"`
+就可以实现我们想要的那个结果啦.
+
+当然既然我们使用了`[(ngModel)]`就不需要使用模板变量了,所以我们改一下上面的代码:
+```typescript
+<input  [ngModel]="user.username"
+        (ngModelChange)="user.username = $event"
+        type="text" class="form-control" id="username" placeholder="Username">
+```
+不要说话,我知道你想问什么;上面代码中的`$event`是什么鬼?为什么可以直接使用,难道`$event`不代表DOM事件吗?别着急,待我细细说来,
+这个`$event`是`ngModelChange`属性返回的输入框的值,它是一个Angular`EventEmitter`类型的属性,这个值就是我们想要的输入框的值.
+
+在有些情况下,我们需要在数据从模板流向模型的时候做一些特殊的处理;比如合并或者限制按键频率,这个时候我们就需要使用`(ngModelChange)`了;
+当然大部分情况下`[(ngModel)]`已经足够满足我们使用了,如果你还想深入的了解一下`ngModel`可以看看这里[模板语法][4].
+
+// todo 下拉框.../老的form表单/表单验证/组件
+
+
 
 
 
@@ -161,4 +193,5 @@ export class AppComponent {
 
 [1]:https://github.com/hacking-with-angular/angular2-travel/tree/quickstart
 [2]:http://dreamapple.leanapp.cn/gitbook/typescript/doc/handbook/Classes.html
-[3]:/source/images/angular2-travel/form-demo-1.jpg
+[3]:/images/angular2-travel/form-demo-1.jpg
+[4]:https://angular.cn/docs/ts/latest/guide/template-syntax.html
