@@ -1,6 +1,7 @@
 title: Step 1 - QuickStart
 date: 2016-8-2 12:00:00
 tags: ["Angular2", "Travel"]
+author: dreamapplehappy
 ---
 这一部分我们来快速入门`Angular2`,在学习的过程中;我们可能会遇到一些不懂的地方,先别着急;先按照官网的的教程把整个流程走下啦.因为我们后面的学习都是在这个基础上进行的.
 

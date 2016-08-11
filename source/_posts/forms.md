@@ -2,6 +2,7 @@ title: Step 4 - Forms
 date: 2016-8-7 12:00:00
 tags: ["Angular2", "Travel"]
 cover: /images/angular2-travel/basics-demo-form.jpg
+author: dreamapplehappy
 ---
 
 **系统提示: 阅读此文大概需要我也不知道几分钟...**
